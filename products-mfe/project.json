@@ -1,0 +1,45 @@
+{
+  "name": "products-mfe",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "products-mfe/src",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "webpack --mode production",
+        "cwd": "products-mfe"
+      },
+      "configurations": {
+        "production": {
+          "command": "webpack --mode production"
+        },
+        "development": {
+          "command": "webpack --mode development"
+        }
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "webpack serve --mode development",
+        "cwd": "products-mfe"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "react-scripts test --watchAll=false",
+        "cwd": "products-mfe"
+      }
+    },
+    "analyze": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "webpack --mode production --env analyze",
+        "cwd": "products-mfe"
+      }
+    }
+  },
+  "tags": ["type:app", "scope:products", "platform:web"]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "shared",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/shared/src",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -p tsconfig.lib.json",
+        "cwd": "libs/shared"
+      },
+      "outputs": ["{workspaceRoot}/dist/libs/shared"]
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo 'No tests configured for shared library'",
+        "cwd": "libs/shared"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo 'No linting configured for shared library'",
+        "cwd": "libs/shared"
+      }
+    }
+  },
+  "tags": ["type:lib", "scope:shared", "platform:web"]
+}
